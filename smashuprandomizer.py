@@ -1,3 +1,10 @@
+#######################################################################
+# This is still under devolopment and will change often as I learn    #
+# more about Python.                                                  #
+#                                                                     #
+# Smash Up Game Random Deck Selector.                                 #
+#######################################################################
+
 import random
 
 done = False #variable to control loop future feature.
@@ -5,6 +12,15 @@ done = False #variable to control loop future feature.
 #List of available decks to pulled from and they are removed from list in draft function.
 deck = ["Pirates", "Tricksters", "Robots", "Dinosaurs",
  "Ninjas", "Aliens", "Wizards", "Zombies"]
+
+class Player(): #adding this later as I learn more.
+    def __init__(self):
+        self.name = ""
+        self.round_one_deck = ""
+        self.round_two_deck = ""
+        self.deck_messege = ""
+        self.wins = 0
+        
 
 #list where decks can be stored after being drafted. A loop to check if deck
 #has been drafted might be a better approach to this.
@@ -45,8 +61,13 @@ players = num_players()
 get_names()
 draft()
 
-#this is just for checking working code and will be deleted.
+################################################################
+#this is just for checking working code and will be deleted.   #
+################################################################
 print("Code check print statments")
+player_1 = Player()
+player_1.name = player_names[0]
+print(player_1.name)
 print(players)
 print(player_names)
 print(round_one_decks)
