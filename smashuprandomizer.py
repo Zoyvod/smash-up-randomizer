@@ -55,16 +55,49 @@ def draft():
         round_two_decks.append(pulled_deck)
         deck.remove(pulled_deck)
 
+def return_decks(): #function to return decks pulled by rounds to the main deck.
+    for i in range(0, players):
+        pulled_deck = round_one_decks[0]
+        deck.append(pulled_deck)
+        round_one_decks.remove(pulled_deck)
+    for i in range(0, players):
+        pulled_deck = round_two_decks[0]
+        deck.append(pulled_deck)
+        round_two_decks.remove(pulled_deck)
 
-
+def display_draft(): #funstion to diplay the draft results this will be cleaned up when I get player class working.
+    if players == 4:
+        print()
+        print(player_names[0], " Drafts : ",round_one_decks[0], " & ", round_two_decks[3])
+        print(player_names[1], " Drafts : ",round_one_decks[1], " & ", round_two_decks[2])
+        print(player_names[2], " Drafts : ",round_one_decks[2], " & ", round_two_decks[1])
+        print(player_names[3], " Drafts : ",round_one_decks[3], " & ", round_two_decks[0])
+        print()
+    elif players == 3:
+        print()
+        print(player_names[0], " Drafts : ",round_one_decks[0], " & ", round_two_decks[2])
+        print(player_names[1], " Drafts : ",round_one_decks[1], " & ", round_two_decks[1])
+        print(player_names[2], " Drafts : ",round_one_decks[2], " & ", round_two_decks[0])
+        print()
+    elif players == 2:
+        print()
+        print(player_names[0], " Drafts : ",round_one_decks[0], " & ", round_two_decks[1])
+        print(player_names[1], " Drafts : ",round_one_decks[1], " & ", round_two_decks[0])
+        print()
+    else:
+        print()
+        print("You didn't select two, three or four players.")
+        print()
+        
 players = num_players()
 get_names()
 draft()
+display_draft()
 
 ################################################################
 #this is just for checking working code and will be deleted.   #
 ################################################################
-print("Code check print statments")
+print("Print statments to check code will be deleted later.")
 player_1 = Player()
 player_1.name = player_names[0]
 print(player_1.name)
@@ -72,5 +105,7 @@ print(players)
 print(player_names)
 print(round_one_decks)
 print(round_two_decks)
+return_decks()
+print(deck)
 
 
